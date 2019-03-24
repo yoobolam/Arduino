@@ -1,0 +1,21 @@
+int pinLED[]= {6,9,11,12};
+int k;
+
+void setup() {
+  for(k=0;k<4;k++){
+    pinMode(pinLED[k],OUTPUT); 
+  }
+}
+
+void loop() {
+  for(k=3;k>1;k--){
+    digitalWrite(pinLED[k],HIGH);} //왼쪽 두개씩 켜기
+  delay(1000);  //1초간 지속
+  for(k=3;k>1;k--){
+    digitalWrite(pinLED[k],LOW);}  // 왼쪽 두개 끄기
+    for(k=1;k>=0;k--){
+    digitalWrite(pinLED[k],HIGH);} //오른쪽 두개 켜기
+    delay(1000);  //1초간 지속
+    for(k=1;k>=0;k--){
+    digitalWrite(pinLED[k],LOW);}  //오른쪽 두개 끄기
+}
